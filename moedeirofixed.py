@@ -20,17 +20,18 @@ while rodar_programa == 1:
 
     print("Deseja acessar o modo consumidor ou admin?")
     modo = int(input("Para acessar o modo consumidor, digite 1, já para o modo Admin, digite 2: "))
+    
     if modo != 1 and modo != 2:
         while modo != 1 and modo != 2:
             print("Insira um comando válido")
             modo = int(input("Para acessar o modo consumidor, digite 1, já para o modo Admin, digite 2: "))
+    
     if modo == 1:
         if estoque_lata_agua == estoque_lata_coca == estoque_lata_redbull == 0:
             print("Sem produtos no estoque!")
             continuar = int(input("Deseja continuar com o programa? SIM(1) ou NÃO(2): "))
             while continuar != 1 and continuar != 2:
                 continuar = int(input("Deseja continuar com o programa? SIM(1) ou NÃO(2): "))
-
             if continuar == 2:
                 rodar_programa = 0
 
@@ -89,6 +90,7 @@ while rodar_programa == 1:
                     "Para inserir: \n20 reais (1)\n10 reais (2)\n5 reais (3)\n2 reais (4)\n1 real (5)\n50 centavos (6)\n25 centavos (7)\n10 centavos (8)\n5 centavos (9)\nCancelar compra e devolver valor inserido (0)\n")
                 valor_inserido = int(input("Insira o comando: "))
                 print("---------------------------------")
+                
                 while valor_inserido < 0 or valor_inserido > 9:
                     print("\nValor inválido, favor escolher uma das 9 opções!")
                     print(
@@ -297,6 +299,7 @@ while rodar_programa == 1:
                 rodar_programa = 0
     else:
         print("\n--------------------------------- \nSeja Bem-vindo ao modo Admin\n")
+        
         # Definição de senha no primeiro acesso ao modo ADM
         if primeiro_uso == 1:
             senha_escolhida = int(input("Escolha uma senha com somente números inteiros: "))
@@ -325,11 +328,13 @@ while rodar_programa == 1:
                   "\nCédulas de 10 reais: ", nota_10_caixa, "\nCédulas de 5 reais: ", nota_5_caixa,
                   "\nCédulas de 2 reais: ", nota_2_caixa, "\nMoedas de 1 real: ", moeda_1_caixa,
                   "\nMoedas de 50 centavos: ", moeda_50_caixa, "\nMoedas de 25 centavos: ", moeda_25_caixa,
-                  "\nMoedas de 10 centavos: ", moeda_10_caixa, "\nMoedas de 5 centavos: ", moeda_5_caixa)
+                  "\nMoedas de 10 centavos: ", moeda_10_caixa, "\nMoedas de 5 centavos: ", moeda_5_caixa)  
             print("\nAqui segue o número de latas em seu estoque:\nCoca-Cola: ", estoque_lata_coca, "\nRedBull: ",
                   estoque_lata_redbull, "\nAgua: ", estoque_lata_agua)
+            
             # Adição de bebidas ao estoque
             adicionar_latas = int(input("Deseja adicionar mais latas? Sim(1) ou Não(2): "))
+            
             # Loop para garantir a inserção de uma opção válida
             while adicionar_latas != 1 and adicionar_latas != 2:
                 print("\nValor inválido, tente novamente")
@@ -338,9 +343,11 @@ while rodar_programa == 1:
             if adicionar_latas == 1:
                 adicionar_latas_escolher = int(input(
                     "\n(1) Coca-Cola 350ml\n(2) RedBull 350ml\n(3) Água sem gas 500ml\nEscolha a bebida a estocar: "))
+                
                 while adicionar_latas_escolher != 1 and adicionar_latas_escolher != 2 and adicionar_latas_escolher != 3:
                     print("\nValor inválido, favor escolher uma das 3 opções!")
                     adicionar_latas_escolher = int(input("Escolha sua bebida (1|2|3)"))
+                
                 if adicionar_latas_escolher == 1:
                     adicionar_coca = int(input("Quantas latas de Coca-Cola você deseja adicionar? "))
                     while adicionar_coca <= 0:
@@ -377,5 +384,6 @@ while rodar_programa == 1:
         continuar = int(input("Deseja continuar com o programa? SIM(1) ou NÃO(2): "))
         while continuar != 1 and continuar != 2:
             continuar = int(input("Deseja continuar com o programa? SIM(1) ou NÃO(2): "))
+        
         if continuar == 2:
             rodar_programa = 0
